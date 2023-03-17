@@ -14,7 +14,7 @@ func SetConfig(v interface{}) error {
 		return err
 	}
 	viper.OnConfigChange(func(e fsnotify.Event) {
-		viper.Unmarshal(vv)
+		viper.Unmarshal(v)
 	})
 	go viper.WatchConfig()
 
